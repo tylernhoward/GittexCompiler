@@ -7,62 +7,79 @@ import scala.collection.JavaConverters
 
 
 class MyLexicalAnalyzer extends LexicalAnalyzer{
-  import java.util
 
   private var file : String= ""
-  private var currentToken = new Array[Char](100)
+  private var currentToken: List[Char] = List()
   private var nextChar:Char = 0
   private var position = 0
-  private var lexemes = new util.ArrayList[String]
+  private var lexemes : List[String] = List()
+
 
   def start(f: String) :Unit = {
-
       initializeLexemes()
       file = f
-      position = 0;
-
-      getChar();
-      getNextToken();
+      position = 0
+      getChar()
+      getNextToken()
   }
-  override def getNextToken(): Unit = {
 
-    var isNextToken: Boolean = false
+  override def getNextToken(): String = {
 
-    while
+    var tokenDiscovered: Boolean = false
 
+    while(!tokenDiscovered){
+      var c = getChar()
+      if(Constants.leadSymbols.contains(c)){ //potential start of a token
+        tokenDiscovered = true
+        if(c == '\\' || c == '!'){
+          addChar()
+          c = getChar()
+          if(c == '\\'){
+            return currentToken.toString() //New line
+          }
+          else{
+            while(!isSpace(c) && c == '['){
+              addChar()
+              c = getChar()
+            }
+          }
+          if(lookup(currentToken.toString())){
+            return currentToken.toString()
+          }
+          else{
+            //ERROR
+          }
+        }
+        else return currentToken.toString()
+      }
+    }
+    return "" //THIS NEEDS TO BE ALTERED
   }
 
   override def lookup(candidateToken: String): Boolean = {
-    if(Constants.tokens.contains(candidateToken)){
-      return true;
-    }
-    else return false
+    Constants.tokens.contains(candidateToken)
   }
 
-  override def getChar(): Unit = {
+  override def getChar(): Char = {
     if (position < file.length()) {
-      nextChar = file.charAt(position);
       position = position + 1
+      nextChar = file.charAt(position - 1)
     }
-    else return
-
+    nextChar
   }
+
   override def addChar(): Unit = {
     currentToken :+= nextChar
   }
 
   private def isSpace(c: Char):Boolean = {
-      c == ' ' || c == '\r' || c == '\n' || c == '\t'
+     Constants.whiteSpace.contains(c)
   }
 
   private def initializeLexemes() = {
-    lexemes = Constants.tokens
-    lexemes.add(('a' to 'z').toString())
-    lexemes.add(('A' to 'Z').toString())
-    lexemes.add(('1' to '9').toString())
+    lexemes = Constants.tokens ::: Constants.letters ::: Constants.numbersEtc
 
   }
-
 
 }
 

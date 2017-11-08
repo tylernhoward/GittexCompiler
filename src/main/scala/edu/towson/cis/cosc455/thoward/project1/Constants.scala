@@ -16,14 +16,15 @@ object Constants {
   val PARAE : String = "\\PARAE"
   val BOLD : String = "*"
   val LISTITEM : String = "+"
-  val NEWLINE : String = "\\\\"
+  val NEWLINE : String = "\\\\" //
   val LINKB : String = "["
   val ADDRESSB : String = "("
   val ADDRESSE : String = ")"
-  val IMAGEB : String = "!["
-  val DEFB : String = "\\DEF["
+  val IMAGEB : String = "![" //
+  val DEFB : String = "\\DEF[" //
   val EQSIGN : String = "="
-  val USEB : String = "\\USE["
+  val USEB : String = "\\USE["//
+  val leadSymbols : List[Char] = List('\\','=','!','(','[','+','*','#',')',']')
   //val REQTEXT : String
   //val TEXT : String
   val tokens : List[String] = List(DOCB,DOCE,TITLEB,BRACKETE,HEADING,PARAB,PARAE,BOLD,LISTITEM,NEWLINE,LINKB,ADDRESSB,ADDRESSE,IMAGEB,DEFB,EQSIGN,USEB);
