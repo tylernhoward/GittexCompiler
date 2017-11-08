@@ -1,10 +1,5 @@
 package edu.towson.cis.cosc455.thoward.project1
 
-import java.util
-
-import scala.collection.mutable.ArrayBuffer
-import scala.collection.JavaConverters
-
 
 class MyLexicalAnalyzer extends LexicalAnalyzer{
 
@@ -19,13 +14,14 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
       initializeLexemes()
       file = f
       position = 0
-      getChar()
-      getNextToken()
+      //getChar()
+      //getNextToken()
   }
 
   override def getNextToken(): String = {
-
+    currentToken = List()
     var tokenDiscovered: Boolean = false
+    var shouldContinue: Boolean = true
 
     while(!tokenDiscovered){
       var c = getChar()
@@ -35,35 +31,47 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
           addChar()
           c = getChar()
           if(c == '\\'){
-            return currentToken.toString() //New line
+            return currentToken.mkString
           }
           else{
-            while(!isSpace(c) && c == '['){
-              addChar()
-              c = getChar()
+            while(shouldContinue){
+              if(c == '['){
+                addChar()
+                shouldContinue = false
+              } else
+              if(isSpace(c)) {
+                shouldContinue = false
+              } else{
+                addChar()
+                c = getChar()
+              }
             }
           }
-          if(lookup(currentToken.toString())){
-            return currentToken.toString()
-          }
-          else{
-            //ERROR
-          }
         }
-        else return currentToken.toString()
+        if (currentToken.length == 0){
+          addChar()
+        }
+
+        if(lookup(currentToken.mkString)){
+          return currentToken.mkString
+        }
+        else{
+          println(currentToken.mkString + " is not valid")
+        }
       }
     }
-    return "" //THIS NEEDS TO BE ALTERED
+    return " " //This is sloppy
+
   }
 
   override def lookup(candidateToken: String): Boolean = {
-    Constants.tokens.contains(candidateToken)
+    Constants.tokens.contains(candidateToken.toUpperCase())
   }
 
   override def getChar(): Char = {
     if (position < file.length()) {
+      nextChar = file.charAt(position)
       position = position + 1
-      nextChar = file.charAt(position - 1)
     }
     nextChar
   }
@@ -73,7 +81,8 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   }
 
   private def isSpace(c: Char):Boolean = {
-     Constants.whiteSpace.contains(c)
+    c == ' '|| c == '\n' || c == '\t'
+    //Constants.whiteSpace.contains(c.toString())
   }
 
   private def initializeLexemes() = {

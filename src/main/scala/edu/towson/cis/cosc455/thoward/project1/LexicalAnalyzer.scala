@@ -4,6 +4,6 @@ trait LexicalAnalyzer {
   //get interface from blackboard
   def addChar() : Unit
   def getChar() : Char
-  def getNextToken() : Unit
+  def getNextToken() : String
   def lookup(candidateString:String) : Boolean
 }
