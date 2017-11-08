@@ -81,8 +81,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   }
 
   private def isSpace(c: Char):Boolean = {
-    c == ' '|| c == '\n' || c == '\t'
-    //Constants.whiteSpace.contains(c.toString())
+    Constants.whiteSpace.contains(c.toString())
   }
 
   private def initializeLexemes() = {
