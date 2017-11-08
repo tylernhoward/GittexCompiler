@@ -15,6 +15,9 @@ object Compiler{
 
     Scanner.getNextToken()
 
+    Parser.gittex()
+
+    produceFile(args(0))
   }
 
   def readFile(file : String) = {
@@ -31,5 +34,8 @@ object Compiler{
       println("USAGE ERROR: wrong extension fool!")
       System.exit(1)
     }
+  }
+  def produceFile(file: String) = {
+      //FileWriter
   }
 }

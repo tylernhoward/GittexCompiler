@@ -1,7 +1,10 @@
 package edu.towson.cis.cosc455.thoward.project1
 
-class MySyntaxAnalyzer extends SyntaxAnalyzer {
-  class MySyntaxAnalyzer extends SyntaxAnalyzer{
+class MySyntaxAnalyzer extends SyntaxAnalyzer{
+  var errorFound : Boolean = false
+  def setError() = errorFound = true
+  def resetError() = errorFound = false
+  def getError : Boolean = errorFound
     override def gittex(): Unit = {
       if (Compiler.currentToken.equalsIgnoreCase(Constants.DOCB)){
         // add to parse tree / stack
