@@ -18,11 +18,14 @@ object Compiler{
       "(https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png)\n\\END\t"
     println(fileContents)
     Scanner.start(fileContents)
+
     currentToken = Scanner.getNextToken()
-
+    /*while(currentToken!=""){
+      currentToken = Scanner.getNextToken()
+      println(currentToken)
+    }*/
     Parser.gittex()
-
-//    produceFile(args(0))
+    produceFile(args(0))
   }
 
   def readFile(file : String) = {

@@ -7,10 +7,10 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   private var currentToken: List[Char] = List()
   private var nextChar:Char = 0
   private var position = 0
+  private var validText : List[String] = List()
   private var lexemes : List[String] = List()
 
-
-  def start(f: String) :Unit = {
+  def start(f: String): Unit = {
       initializeLexemes()
       file = f
       position = 0
@@ -19,61 +19,108 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   }
 
   override def getNextToken(): String = {
+    getChar()
     currentToken = List()
-    var tokenDiscovered: Boolean = false
+    while(isSpace(nextChar)){
+      getChar()
+    }
+    if(isStartSymbol()){
+      nextChar match {
+        case '=' => addChar()
+        case '(' => addChar()
+        case '+' => addChar()
+        case '*' => addChar()
+        case '#' => addChar()
+        case ')' => addChar()
+        case ']' => addChar()
+        case '[' => addChar()
+        case '!' => processToken()
+        case '\\' => processToken()
+        case  _ => println("what the hell")     //REMOVE THIS
+      }
+      checkIfValid()
+    }
+    else if (validText.contains(nextChar.toString())){
+      processText()
+    } else{
+      //error
+      System.exit(1);
+    }
+
+    currentToken.mkString
+    //else error
+  }
+  def checkIfValid(): Unit ={
+    if(!lookup(currentToken.mkString)){
+      println("LEXICAL ERROR")
+      System.exit(1)
+    }
+  }
+
+  def processText(): Unit ={
     var shouldContinue: Boolean = true
 
-    while(!tokenDiscovered){
-      var c = getChar()
-      if(Constants.leadSymbols.contains(c)){ //potential start of a token
-        tokenDiscovered = true
-        if(c == '\\' || c == '!'){
-          addChar()
-          c = getChar()
-          if(c == '\\'){
-            return currentToken.mkString
-          }
-          else{
-            while(shouldContinue){
-              if(c == '['){
-                addChar()
-                shouldContinue = false
-              } else
-              if(isSpace(c)) {
-                shouldContinue = false
-              } else{
-                addChar()
-                c = getChar()
-              }
-            }
-          }
-        }
-        if (currentToken.length == 0){
-          addChar()
-        }
+    while(shouldContinue){
+      if(isStartSymbol()){
+        shouldContinue = false
+      }
+      else if (!Constants.whiteEscapes.contains(file.charAt(position)) && !Constants.leadSymbols.contains(file.charAt(position))) {
+        addChar()
+        getChar()
+      }
+      else{
+        addChar()
+        shouldContinue = false
+      }
 
-        if(lookup(currentToken.mkString)){
-          return currentToken.mkString
-        }
-        else{
-          println(currentToken.mkString + " is not valid")
+    }
+  }
+  def processToken(): Unit = {
+    var shouldContinue:Boolean = true
+    if (nextChar.equals('!')) {
+      addChar()
+      getChar()
+      if (nextChar.equals('[')) {
+        addChar()
+      }
+    }
+    else if (nextChar.equals('\\')) {
+      addChar()
+      getChar()
+      if (nextChar.equals('\\')) {
+        addChar()
+      }
+      else {
+        while (shouldContinue) {
+          if (nextChar.equals('[')) {
+            addChar()
+            shouldContinue = false
+          }
+          else if(isSpace(nextChar)){
+            shouldContinue = false
+          }
+          else {
+            addChar()
+            getChar()
+          }
         }
       }
     }
-    return " " //This is sloppy
+  }
 
+  def isStartSymbol(): Boolean ={
+      Constants.leadSymbols.contains(nextChar)
   }
 
   override def lookup(candidateToken: String): Boolean = {
-    Constants.tokens.contains(candidateToken.toUpperCase())
+      lexemes.contains(candidateToken)
   }
 
-  override def getChar(): Char = {
+  override def getChar(): Unit = {
     if (position < file.length()) {
       nextChar = file.charAt(position)
       position = position + 1
     }
-    nextChar
   }
 
   override def addChar(): Unit = {
@@ -85,7 +132,8 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   }
 
   private def initializeLexemes() = {
-    lexemes = Constants.tokens ::: Constants.letters ::: Constants.numbersEtc
+    validText = Constants.letters ::: Constants.numbersEtc
+    lexemes = Constants.tokens
 
   }
 

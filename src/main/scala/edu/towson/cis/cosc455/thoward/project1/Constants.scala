@@ -2,10 +2,12 @@ package edu.towson.cis.cosc455.thoward.project1
 
 object Constants {
   val letters : List[String] = List("a","b","c","d","e","f","g","h","i","j","k","l","m",
-    "n","o","p","q","r","s","t","u","v","w","x","y","z")
+    "n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
+    "N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
   val numbersEtc : List[String] = List("1","2","3","4","5","6","7","8","9","0",
-    ",",".","\"",":","?","_","/", "'", "")
+    ",",".","\"",":","?","_","/", "'", " ", "")
   val whiteSpace : List[String] = List(" ", "\t", "\n", "\b","\f","\r")
+  val whiteEscapes: List[Char] = List('\t', '\n', '\b','\f','\r')
   val validText : List[String] = whiteSpace ::: letters ::: numbersEtc
   val DOCB : String = 	"\\BEGIN"
   val DOCE : String = 	"\\END"

@@ -22,8 +22,8 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
 
   override def paragraph(): Unit = {
     makeParse(Constants.PARAB)
-    variableDefine()
-    innerText()
+    //variableDefine()
+//    innerText()
     makeParse(Constants.PARAE)
   }
 
@@ -84,17 +84,84 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
   override def listItem(): Unit = {
     makeParse(Constants.LISTITEM)
     innerItem()
-    listItem()
+//    listItem()
   }
   override def body(): Unit = {
-
+    if(currentToken.equalsIgnoreCase(Constants.PARAB)){
+      paragraph()
+      body()
+    }
+    else if(currentToken.equalsIgnoreCase(Constants.NEWLINE)){
+      newline()
+      body()
+    }
+    else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
+      return
+    }
+    else {
+      innerText()
+//      body()
+    }
+    //need empty
   }
+
   override def innerItem(): Unit = {
+    if (currentToken.equalsIgnoreCase(Constants.USEB)) {
+      variableUse()
+      innerItem()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.BOLD)) {
+      bold()
+      innerItem()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.LINKB)) {
+      link()
+      innerItem()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.DOCE)) {
+      return
+    }
+    else return //text
 
   }
 
   override def innerText(): Unit = {
-
+    if (currentToken.equalsIgnoreCase(Constants.PARAE)) {
+      paragraph()
+    }
+    if (currentToken.equalsIgnoreCase(Constants.HEADING)) {
+      heading()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.BOLD)) {
+      bold()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.LISTITEM)) {
+      listItem()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.IMAGEB)) {
+      image()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.USEB)) {
+      variableUse()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.LINKB)) {
+      link()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.NEWLINE)) {
+      newline()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.DOCE)) {
+      return
+    }
+    else return
+      //text
   }
 
   def makeParse(cToken:String): Unit = {
