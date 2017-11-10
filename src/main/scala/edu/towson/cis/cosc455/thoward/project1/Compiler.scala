@@ -25,7 +25,7 @@ object Compiler{
       println(currentToken)
     }*/
     Parser.gittex()
-    produceFile(args(0))
+//    produceFile(args(0))
   }
 
   def readFile(file : String) = {

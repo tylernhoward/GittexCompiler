@@ -5,40 +5,41 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
   var errorFound : Boolean = false
   var parseStack = Stack[String]()
   var currentToken: String = ""
-  def setError() = errorFound = true
   def resetError() = errorFound = false
   def getError : Boolean = errorFound
 
   override def gittex(): Unit = {
+    resetError()
     if (Compiler.currentToken.equalsIgnoreCase(Constants.DOCB)){
       parseStack.push(Compiler.currentToken)
       currentToken = Compiler.Scanner.getNextToken()
-    } else setError()
+    } else setError(Constants.DOCB)
     //variableDefine() //while loop??
     title()
     body()
     makeParse(Constants.DOCE)
+
   }
 
   override def paragraph(): Unit = {
     makeParse(Constants.PARAB)
     //variableDefine()
-//    innerText()
+    innerText()
     makeParse(Constants.PARAE)
   }
 
   override def link(): Unit = {
     makeParse(Constants.LINKB)
-    //text
+    parseText()
     makeParse(Constants.BRACKETE)
     makeParse(Constants.ADDRESSB)
-    //text
+    parseText()
     makeParse(Constants.ADDRESSE)
   }
 
   override def bold(): Unit = {
     makeParse(Constants.BOLD)
-    //text
+    parseText()
     makeParse(Constants.BOLD)
   }
 
@@ -48,43 +49,42 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
 
   override def title(): Unit = {
     makeParse(Constants.TITLEB)
-    //check for text
+    parseText()
     makeParse(Constants.BRACKETE)
   }
 
   override def variableDefine(): Unit = {
     makeParse(Constants.DEFB)
-    //text
+    parseText()
     makeParse(Constants.EQSIGN)
-    //text
+    parseText()
     makeParse(Constants.BRACKETE)
     variableDefine()
   }
 
   override def image(): Unit = {
     makeParse(Constants.IMAGEB)
-    //text
+    parseText()
     makeParse(Constants.BRACKETE)
     makeParse(Constants.ADDRESSB)
-    //text
+    parseText()
     makeParse(Constants.ADDRESSE)
   }
 
   override def variableUse(): Unit = {
     makeParse(Constants.USEB)
-    //text
+    parseText()
     makeParse(Constants.BRACKETE)
   }
 
   override def heading(): Unit = {
     makeParse(Constants.HEADING)
-    //checkfortext
+    parseText()
   }
 
   override def listItem(): Unit = {
     makeParse(Constants.LISTITEM)
     innerItem()
-//    listItem()
   }
   override def body(): Unit = {
     if(currentToken.equalsIgnoreCase(Constants.PARAB)){
@@ -96,13 +96,13 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       body()
     }
     else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
-      return
+      println("hi")
     }
-    else {
+    else{
       innerText()
-//      body()
+      body()
     }
-    //need empty
+    //NEED EMPTY CASE
   }
 
   override def innerItem(): Unit = {
@@ -118,15 +118,14 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       link()
       innerItem()
     }
-    else if (currentToken.equalsIgnoreCase(Constants.DOCE)) {
-      return
-    }
-    else return //text
+
+
+    else return parseText()
 
   }
 
   override def innerText(): Unit = {
-    if (currentToken.equalsIgnoreCase(Constants.PARAE)) {
+    if (currentToken.equalsIgnoreCase(Constants.PARAB)) {
       paragraph()
     }
     if (currentToken.equalsIgnoreCase(Constants.HEADING)) {
@@ -157,17 +156,33 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       newline()
       innerText()
     }
-    else if (currentToken.equalsIgnoreCase(Constants.DOCE)) {
-      return
+    else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
+      println(parseStack)
+//SO FUCKING CLOSE SADFJADSKFJASDKFJSDAKFJASDKFJSAKDFJ
+      makeParse(Constants.DOCE)
     }
-    else return
-      //text
-  }
+    else
+      parseText()
+    }
 
   def makeParse(cToken:String): Unit = {
+    resetError()
     if (currentToken.equalsIgnoreCase(cToken)){
-      parseStack.push(Compiler.currentToken)
+      parseStack.push(currentToken)
+      println(parseStack)
       currentToken = Compiler.Scanner.getNextToken()
-    } else setError()
+    } else setError(cToken)
   }
+  def parseText(): Unit ={
+
+    if (!currentToken.contains(Constants.leadSymbols)){ //Need better verification that this is text
+      parseStack.push(currentToken)
+      currentToken = Compiler.Scanner.getNextToken()
+    } else setError("text")
+  }
+  def setError(expect: String): Unit ={
+    errorFound = true
+    println("Syntax error at " + currentToken + " Expected: " + expect)
+  }
+
 }

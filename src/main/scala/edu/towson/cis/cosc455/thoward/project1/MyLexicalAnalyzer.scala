@@ -21,9 +21,11 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   override def getNextToken(): String = {
     getChar()
     currentToken = List()
+    //Ignore white space
     while(isSpace(nextChar)){
       getChar()
     }
+    //If potential start of token, process token
     if(isStartSymbol()){
       nextChar match {
         case '=' => addChar()
@@ -38,21 +40,23 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
         case '\\' => processToken()
         case  _ => println("what the hell")     //REMOVE THIS
       }
+      //check if collected is valid token
       checkIfValid()
     }
+    // If the char is not a token start, process if it valid text
     else if (validText.contains(nextChar.toString())){
       processText()
     } else{
-      //error
+      println("Lexical Error at " + nextChar + " NOT VALID TEXT")
       System.exit(1);
     }
-
+    //return collected token / text
     currentToken.mkString
-    //else error
   }
+
   def checkIfValid(): Unit ={
     if(!lookup(currentToken.mkString)){
-      println("LEXICAL ERROR")
+      println("Lexical Error at " + currentToken.mkString + " INVALID TOKEN")
       System.exit(1)
     }
   }
@@ -64,6 +68,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
       if(isStartSymbol()){
         shouldContinue = false
       }
+      //do not process white space other than spaces, and do not
       else if (!Constants.whiteEscapes.contains(file.charAt(position)) && !Constants.leadSymbols.contains(file.charAt(position))) {
         addChar()
         getChar()
@@ -72,9 +77,9 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
         addChar()
         shouldContinue = false
       }
-
     }
   }
+
   def processToken(): Unit = {
     var shouldContinue:Boolean = true
     if (nextChar.equals('!')) {
@@ -113,7 +118,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
   }
 
   override def lookup(candidateToken: String): Boolean = {
-      lexemes.contains(candidateToken)
+      lexemes.contains(candidateToken.toUpperCase)
   }
 
   override def getChar(): Unit = {
