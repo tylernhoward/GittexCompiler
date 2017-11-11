@@ -3,6 +3,7 @@ import scala.collection.mutable.Stack
 
 class MySyntaxAnalyzer extends SyntaxAnalyzer{
   var errorFound : Boolean = false
+  var errorCount : Int = 0
   var parseStack = Stack[String]()
   var currentToken: String = ""
   def resetError() = errorFound = false
@@ -18,13 +19,15 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     title()
     body()
     makeParse(Constants.DOCE)
-
+    println(parseStack)
+    if (errorCount > 0) System.exit(1)
   }
 
   override def paragraph(): Unit = {
     makeParse(Constants.PARAB)
     //variableDefine()
     innerText()
+    innerItem()
     makeParse(Constants.PARAE)
   }
 
@@ -96,7 +99,9 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       body()
     }
     else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
-      println("hi")
+    }
+    else if(currentToken.equalsIgnoreCase(Constants.PARAE)){
+
     }
     else{
       innerText()
@@ -120,7 +125,7 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     }
 
 
-    else return parseText()
+    else parseText()
 
   }
 
@@ -157,9 +162,8 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       innerText()
     }
     else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
-      println(parseStack)
-//SO FUCKING CLOSE SADFJADSKFJASDKFJSDAKFJASDKFJSAKDFJ
-      makeParse(Constants.DOCE)
+      //println(parseStack)
+      //
     }
     else
       parseText()
@@ -169,18 +173,20 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     resetError()
     if (currentToken.equalsIgnoreCase(cToken)){
       parseStack.push(currentToken)
-      println(parseStack)
-      currentToken = Compiler.Scanner.getNextToken()
+      if(!cToken.equalsIgnoreCase(Constants.DOCE)){
+        currentToken = Compiler.Scanner.getNextToken()
+      }
     } else setError(cToken)
   }
   def parseText(): Unit ={
-
-    if (!currentToken.contains(Constants.leadSymbols)){ //Need better verification that this is text
+    resetError()
+    if (!Constants.tokens.contains(currentToken)){ //Need better verification that this is text
       parseStack.push(currentToken)
       currentToken = Compiler.Scanner.getNextToken()
     } else setError("text")
   }
   def setError(expect: String): Unit ={
+    errorCount = errorCount + 1
     errorFound = true
     println("Syntax error at " + currentToken + " Expected: " + expect)
   }
