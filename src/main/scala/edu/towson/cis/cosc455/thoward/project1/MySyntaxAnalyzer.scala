@@ -137,16 +137,16 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       heading()
       innerText()
     }
-    else if (currentToken.equalsIgnoreCase(Constants.BOLD)) {
-      bold()
-      innerText()
-    }
     else if (currentToken.equalsIgnoreCase(Constants.LISTITEM)) {
       listItem()
       innerText()
     }
     else if (currentToken.equalsIgnoreCase(Constants.IMAGEB)) {
       image()
+      innerText()
+    }
+    else if (currentToken.equalsIgnoreCase(Constants.BOLD)) {
+      bold()
       innerText()
     }
     else if (currentToken.equalsIgnoreCase(Constants.USEB)) {
