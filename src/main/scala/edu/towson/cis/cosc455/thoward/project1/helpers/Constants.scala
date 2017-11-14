@@ -1,4 +1,4 @@
-package edu.towson.cis.cosc455.thoward.project1
+package edu.towson.cis.cosc455.thoward.project1.helpers
 
 object Constants {
   val letters : List[String] = List("a","b","c","d","e","f","g","h","i","j","k","l","m",

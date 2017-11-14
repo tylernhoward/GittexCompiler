@@ -1,5 +1,8 @@
 package edu.towson.cis.cosc455.thoward.project1
 
+import edu.towson.cis.cosc455.thoward.project1.helpers.Constants
+import edu.towson.cis.cosc455.thoward.project1.traits.LexicalAnalyzer
+
 
 class MyLexicalAnalyzer extends LexicalAnalyzer{
 
@@ -61,6 +64,10 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
       println("Lexical Error at " + currentToken.mkString + ". This is an invalid token")
       System.exit(1)
     }
+    else {
+      currentToken = currentToken.map(_.toTitleCase)
+    }
+
   }
 
   def processText(): Unit ={

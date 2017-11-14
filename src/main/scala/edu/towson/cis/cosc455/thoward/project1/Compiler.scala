@@ -16,8 +16,8 @@ object Compiler{
   def main(args: Array[String]): Unit = {
     //checkFile(args)
     //readFile(args(0))
-    fileContents = "\\begin\n\t\\TITLE[The Simpsons]\n\t# The Simpsons\n\t\\PARAB\n\t\tThe members of the [The Simpsons](https://en.wikipedia.org/wiki/The_Simpsons) are:\n\t\\PARAE\n\t+ Homer Simpson\n\t+ Marge Simpson\n\t+ Bart Simpson\n\t+ Lisa Simpson\n\t+ Maggie Simpson\n\tHere is a * picture * :\n\t\\\\\n\t![The Simpsons] (https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png)\n\\end"
-
+    //fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\TITLE[Variables] \n\t\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\t\n\t+ Homer \\USE[lastname] \n\t+ Marge \\USE[lastname]\n\t+ Bart \\USE[lastname]\n\t+ Lisa \\USE[lastname]\t\n\t+ Maggie \\USE[lastname]\n\\END "
+    fileContents = "\\begin\n\t\\DeF[name = Josh]\n\t\\TitlE[Scoped Variables] \n\n\tMy name is \\use[name]. \n\t\n\t\\PARAB\n\t\t\\DEF[name = Jon]\n\t\tInside the paragraph block, my name is \\USE[name].\n\t\\PARAE\n\n\tNow, my name is \\USE[name] again.\n\\END\t "
     Scanner.start(fileContents)
     currentToken = Scanner.getNextToken()
     Parser.gittex()

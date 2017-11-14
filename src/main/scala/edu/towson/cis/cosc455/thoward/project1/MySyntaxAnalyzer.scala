@@ -1,4 +1,7 @@
 package edu.towson.cis.cosc455.thoward.project1
+import edu.towson.cis.cosc455.thoward.project1.helpers.Constants
+import edu.towson.cis.cosc455.thoward.project1.traits.SyntaxAnalyzer
+
 import scala.collection.mutable.Stack
 
 class MySyntaxAnalyzer extends SyntaxAnalyzer{
@@ -11,21 +14,21 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
 
   override def gittex(): Unit = {
     resetError()
+    //get the first token one from the compiler object
     if (Compiler.currentToken.equalsIgnoreCase(Constants.DOCB)){
       parseStack.push(Compiler.currentToken)
       currentToken = Compiler.Scanner.getNextToken()
     } else setError(Constants.DOCB)
-    variableDefine() //while loop??
+    while(currentToken.equalsIgnoreCase(Constants.DEFB)){variableDefine()}
     title()
     body()
     makeParse(Constants.DOCE)
-    //currentToken = Compiler.Scanner.getNextToken()
-    //if(currentToken.equals(" ")){println("DUFCK")}
+    checkForStragglers()
   }
 
   override def paragraph(): Unit = {
     makeParse(Constants.PARAB)
-    variableDefine()
+    while(currentToken.equalsIgnoreCase(Constants.DEFB)){variableDefine()}
     innerText()
     innerItem()
     makeParse(Constants.PARAE)
@@ -62,7 +65,6 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     makeParse(Constants.EQSIGN)
     parseText()
     makeParse(Constants.BRACKETE)
-    variableDefine()
   }
 
   override def image(): Unit = {
@@ -90,78 +92,77 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     innerItem()
   }
   override def body(): Unit = {
-    if(currentToken.equalsIgnoreCase(Constants.PARAB)){
-      paragraph()
-      body()
-    }
-    else if(currentToken.equalsIgnoreCase(Constants.NEWLINE)){
-      newline()
-      body()
-    }
-    else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
-    }
-    else if(currentToken.equalsIgnoreCase(Constants.PARAE)){
-    }
-    else{
-      innerText()
-      body()
+    currentToken match {
+      case Constants.PARAB => {
+        paragraph()
+        body()
+      }
+      case Constants.NEWLINE =>{
+        newline()
+        body()
+      }
+      case Constants.DOCE => //do nothing
+      case Constants.PARAE => //do nothing
+      case _ =>{
+        innerText()
+        body()
+      }
     }
   }
 
   override def innerItem(): Unit = {
-    if (currentToken.equalsIgnoreCase(Constants.USEB)) {
-      variableUse()
-      innerItem()
+    currentToken match {
+      case Constants.USEB => {
+        variableUse()
+        innerItem()
     }
-    else if (currentToken.equalsIgnoreCase(Constants.BOLD)) {
-      bold()
-      innerItem()
+      case Constants.BOLD => {
+        bold()
+        innerItem()
+      }
+      case Constants.LINKB => {
+        link()
+        innerItem()
+      }
+      case _ => parseText()
     }
-    else if (currentToken.equalsIgnoreCase(Constants.LINKB)) {
-      link()
-      innerItem()
-    }
-    else parseText()
-
   }
 
   override def innerText(): Unit = {
-    if (currentToken.equalsIgnoreCase(Constants.PARAB)) {
-      paragraph()
+    currentToken match {
+      case Constants.PARAB => paragraph()
+      case Constants.HEADING => {
+        heading()
+        innerText()
+      }
+      case Constants.LISTITEM => {
+        listItem()
+        innerText()
+      }
+      case Constants.IMAGEB => {
+        image()
+        innerText()
+      }
+      case Constants.BOLD => {
+        bold()
+        innerText()
+      }
+      case Constants.USEB => {
+        variableUse()
+        innerText()
+      }
+      case Constants.LINKB => {
+        link()
+        innerText()
+      }
+      case Constants.NEWLINE => {
+        newline()
+        innerText()
+      }
+      case Constants.DOCE => //do nothing
+      case _ => parseText()
     }
-    if (currentToken.equalsIgnoreCase(Constants.HEADING)) {
-      heading()
-      innerText()
-    }
-    else if (currentToken.equalsIgnoreCase(Constants.LISTITEM)) {
-      listItem()
-      innerText()
-    }
-    else if (currentToken.equalsIgnoreCase(Constants.IMAGEB)) {
-      image()
-      innerText()
-    }
-    else if (currentToken.equalsIgnoreCase(Constants.BOLD)) {
-      bold()
-      innerText()
-    }
-    else if (currentToken.equalsIgnoreCase(Constants.USEB)) {
-      variableUse()
-      innerText()
-    }
-    else if (currentToken.equalsIgnoreCase(Constants.LINKB)) {
-      link()
-      innerText()
-    }
-    else if (currentToken.equalsIgnoreCase(Constants.NEWLINE)) {
-      newline()
-      innerText()
-    }
-    else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
-    }
-    else
-      parseText()
-    }
+  }
 
   def makeParse(cToken:String): Unit = {
     resetError()
@@ -182,9 +183,16 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
   def setError(expect: String): Unit ={
     //errorCount = errorCount + 1
     errorFound = true
-    println("Syntax error at " + currentToken + " Expected: " + expect)
+    println("Syntax error at " + currentToken + ". Expected: " + expect)
     System.exit(1)
-
+  }
+  def checkForStragglers(): Unit ={
+    var file = Compiler.fileContents
+    file = file.substring(Compiler.fileContents.indexOf(Constants.DOCE),Compiler.fileContents.length()).trim()
+    if (!file.endsWith(Constants.DOCE)){
+      println("Syntax error at " + file + ". No tokens may exist after \\END")
+      System.exit(1)
+    }
   }
 
 }

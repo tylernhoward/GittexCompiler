@@ -1,4 +1,4 @@
-package edu.towson.cis.cosc455.thoward.project1
+package edu.towson.cis.cosc455.thoward.project1.traits
 
 trait LexicalAnalyzer {
   //get interface from blackboard
