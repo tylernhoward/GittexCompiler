@@ -3,7 +3,7 @@ import scala.collection.mutable.Stack
 
 class MySyntaxAnalyzer extends SyntaxAnalyzer{
   var errorFound : Boolean = false
-  var errorCount : Int = 0
+  //var errorCount : Int = 0
   var parseStack = Stack[String]()
   var currentToken: String = ""
   def resetError() = errorFound = false
@@ -15,17 +15,17 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       parseStack.push(Compiler.currentToken)
       currentToken = Compiler.Scanner.getNextToken()
     } else setError(Constants.DOCB)
-    //variableDefine() //while loop??
+    variableDefine() //while loop??
     title()
     body()
     makeParse(Constants.DOCE)
-    println(parseStack)
-    if (errorCount > 0) System.exit(1)
+    //currentToken = Compiler.Scanner.getNextToken()
+    //if(currentToken.equals(" ")){println("DUFCK")}
   }
 
   override def paragraph(): Unit = {
     makeParse(Constants.PARAB)
-    //variableDefine()
+    variableDefine()
     innerText()
     innerItem()
     makeParse(Constants.PARAE)
@@ -101,13 +101,11 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
     }
     else if(currentToken.equalsIgnoreCase(Constants.PARAE)){
-
     }
     else{
       innerText()
       body()
     }
-    //NEED EMPTY CASE
   }
 
   override def innerItem(): Unit = {
@@ -123,8 +121,6 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       link()
       innerItem()
     }
-
-
     else parseText()
 
   }
@@ -162,8 +158,6 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       innerText()
     }
     else if(currentToken.equalsIgnoreCase(Constants.DOCE)){
-      //println(parseStack)
-      //
     }
     else
       parseText()
@@ -180,15 +174,17 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
   }
   def parseText(): Unit ={
     resetError()
-    if (!Constants.tokens.contains(currentToken)){ //Need better verification that this is text
+    if (!Constants.tokens.contains(currentToken)){ //Need better verification this is text
       parseStack.push(currentToken)
       currentToken = Compiler.Scanner.getNextToken()
     } else setError("text")
   }
   def setError(expect: String): Unit ={
-    errorCount = errorCount + 1
+    //errorCount = errorCount + 1
     errorFound = true
     println("Syntax error at " + currentToken + " Expected: " + expect)
+    System.exit(1)
+
   }
 
 }

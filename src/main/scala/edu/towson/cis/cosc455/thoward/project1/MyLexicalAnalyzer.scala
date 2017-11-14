@@ -5,6 +5,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
 
   private var file : String= ""
   private var currentToken: List[Char] = List()
+  var found: List[String] = List()
   private var nextChar:Char = 0
   private var position = 0
   private var validText : List[String] = List()
@@ -38,7 +39,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
         case '[' => addChar()
         case '!' => processToken()
         case '\\' => processToken()
-        case  _ => println("what the hell")     //REMOVE THIS
+        case  _ =>  System.exit(1)    //ERRORLOG
       }
       //check if collected is valid token
       checkIfValid()
@@ -47,16 +48,17 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
     else if (validText.contains(nextChar.toString())){
       processText()
     } else{
-      println("Lexical Error at " + nextChar + " NOT VALID TEXT")
-      System.exit(1);
+      println("Lexical Error at " + nextChar + ". This is not valid text")
+      System.exit(1)
     }
     //return collected token / text
+    found :+= currentToken.mkString
     currentToken.mkString
   }
 
   def checkIfValid(): Unit ={
     if(!lookup(currentToken.mkString)){
-      println("Lexical Error at " + currentToken.mkString + " INVALID TOKEN")
+      println("Lexical Error at " + currentToken.mkString + ". This is an invalid token")
       System.exit(1)
     }
   }
@@ -68,7 +70,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
       if(isStartSymbol()){
         shouldContinue = false
       }
-      //do not process white space other than spaces, and do not
+      //do not process white space other than spaces
       else if (!Constants.whiteEscapes.contains(file.charAt(position)) && !Constants.leadSymbols.contains(file.charAt(position))) {
         addChar()
         getChar()
@@ -101,7 +103,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
             addChar()
             shouldContinue = false
           }
-          else if(isSpace(nextChar)){
+          else if(isSpace(nextChar) || lookup(currentToken.mkString)){
             shouldContinue = false
           }
           else {

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="compiler:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="deb26bc0-bc17-4807-baf1-e267326e2dc5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/compiler_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/oldlex.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/Compiler$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/Compiler$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/Compiler.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/Compiler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,9 +45,11 @@
       <file leaf-file-name="Compiler.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="368">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#49#72#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,21 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyLexicalAnalyzer.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyLexicalAnalyzer.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="oldlex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/oldlex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <state relative-caret-position="2193">
+              <caret line="129" column="5" lean-forward="false" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -82,18 +87,18 @@
       <file leaf-file-name="MySyntaxAnalyzer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2276">
-              <caret line="150" column="5" lean-forward="false" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
+            <state relative-caret-position="561">
+              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySemanticAnalyzer.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MySemanticAnalyzer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+            <state relative-caret-position="443">
+              <caret line="68" column="36" lean-forward="true" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -102,7 +107,7 @@
       <file leaf-file-name="List.scala" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.3-sources.jar!/scala/collection/immutable/List.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="7106">
               <caret line="427" column="0" lean-forward="false" selection-start-line="427" selection-start-column="0" selection-end-line="427" selection-end-column="0" />
               <folding />
             </state>
@@ -112,7 +117,7 @@
       <file leaf-file-name="Constants.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Constants.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
+            <state relative-caret-position="153">
               <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
               <folding />
             </state>
@@ -132,6 +137,7 @@
     <findStrings>
       <find>CONSTANTS</find>
       <find>'</find>
+      <find>lexemes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,11 +162,11 @@
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/LexicalAnalyzer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/oldlex.java" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Constants.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" />
       </list>
     </option>
   </component>
@@ -171,8 +177,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="1280" />
+    <option name="y" value="-897" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -223,26 +231,39 @@
               <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="project1" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
             <path>
-              <item name="GittexCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GittexCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="gittexcompiler" type="cbb8eebc:String" user="gittexcompiler" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="gittexcompiler-build" type="cbb8eebc:String" user="gittexcompiler-build" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="gittexcompiler-build" type="cbb8eebc:String" user="gittexcompiler-build" />
+              <item name="project" type="cbb8eebc:String" user="project" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -432,12 +453,13 @@
       <workItem from="1510109859110" duration="34765000" />
       <workItem from="1510249581373" duration="2065000" />
       <workItem from="1510252047776" duration="12539000" />
-      <workItem from="1510363273198" duration="12731000" />
+      <workItem from="1510363273198" duration="12800000" />
+      <workItem from="1510617298604" duration="9006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79182000" />
+    <option name="totallyTimeSpent" value="88257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,7 +471,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="1280" y="-897" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -461,12 +483,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2176617" sideWeight="0.15379113" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34452736" sideWeight="0.8462089" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28150406" sideWeight="0.8462089" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.49713877" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31094527" sideWeight="0.49427754" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2353362" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1773163" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -487,7 +509,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2176617" sideWeight="0.15379113" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2176617" sideWeight="0.15379113" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -504,14 +526,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34452736" sideWeight="0.8462089" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.49713877" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2176617" sideWeight="0.8462089" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.49427754" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12875536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31094527" sideWeight="0.49427754" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23819743" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09728183" sideWeight="0.5072202" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,14 +547,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Constants.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -549,19 +563,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#49#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -597,14 +606,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -617,7 +619,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#49#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -653,14 +657,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -673,7 +670,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#49#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,14 +708,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -729,7 +721,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#49#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -765,19 +759,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="e#49#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,14 +802,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Constants.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -832,10 +814,35 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/BNF" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Test1.gtx.html" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/scriptFile.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/SyntaxAnalyzer.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Constants.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/oldlex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.3-sources.jar!/scala/collection/immutable/List.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7106">
+          <caret line="427" column="0" lean-forward="false" selection-start-line="427" selection-start-column="0" selection-end-line="427" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/compiler_jar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -848,66 +855,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Constants.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/SyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state relative-caret-position="368">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#49#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="68" column="36" lean-forward="true" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2276">
-          <caret line="150" column="5" lean-forward="false" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/oldlex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        <state relative-caret-position="561">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.3-sources.jar!/scala/collection/immutable/List.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="427" column="0" lean-forward="false" selection-start-line="427" selection-start-column="0" selection-end-line="427" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        <state relative-caret-position="2193">
+          <caret line="129" column="5" lean-forward="false" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -915,6 +900,32 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>compiler</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -928,6 +939,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -937,8 +949,22 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>gittexcompiler</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>SBT: org.scala-lang:scala-library:2.12.3:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -7,16 +7,16 @@ class MySemanticAnalyzer {
   var parseStack = Stack[String]()
 
   var next: String = ""
-  def process(): Unit ={
+  def process():String ={
     parseStack = Compiler.Parser.parseStack.reverse
     convert()
     convertedStack = convertedStack.reverse
-    println(convertedStack.mkString)
-
+    convertedStack.mkString
   }
   def convert(): Unit ={
     while(!parseStack.isEmpty){
       next = parseStack.pop()
+      // use match
       if (next.equalsIgnoreCase(Constants.DOCB)) {
         convertedStack.push("<html>")
       }
@@ -67,6 +67,13 @@ class MySemanticAnalyzer {
         next = parseStack.pop()
         convertedStack.push(next)
         convertedStack.push("</li>")
+      }
+      else if (next.equalsIgnoreCase(Constants.BOLD)) {
+        convertedStack.push("<b>")
+        next = parseStack.pop()
+        convertedStack.push(next)
+        parseStack.pop()
+        convertedStack.push("</b>")
       }
       else if (next.equalsIgnoreCase(Constants.HEADING)) {
         convertedStack.push("<h1>")
