@@ -51,7 +51,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
     else if (validText.contains(nextChar.toString())){
       processText()
     } else{
-      println("Lexical Error at " + nextChar + ". This is not valid text")
+      println("Lexical Error at \n\t" + nextChar + "\nThis is not valid text")
       System.exit(1)
     }
     //return collected token / text
@@ -61,7 +61,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer{
 
   def checkIfValid(): Unit ={
     if(!lookup(currentToken.mkString)){
-      println("Lexical Error at " + currentToken.mkString + ". This is an invalid token")
+      println("Lexical Error at \n\t" + currentToken.mkString + "\nThis is an invalid token")
       System.exit(1)
     }
     else {

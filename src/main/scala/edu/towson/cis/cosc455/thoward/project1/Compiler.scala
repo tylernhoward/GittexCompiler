@@ -14,18 +14,18 @@ object Compiler{
   val SemanticAnalyzer = new MySemanticAnalyzer
 
   def main(args: Array[String]): Unit = {
-    //checkFile(args)
-    //readFile(args(0))
+    checkFile(args)
+    readFile(args(0))
+   // fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\DEF[hname = Homer]\n\t\\DEF[bname = Bart]\n\t\\TITLE[Variables]\n\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\n\t+ \\USE[hname]  \\USE[lastname]df\n\t+ Marge \\USE[lastname]df\n\t+ \\USE[bname]  \\USE[lastname]df\n\t+ Lisa \\USE[lastname]\n\t+ Maggie \\USE[lastname]\n\\END"
     //fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\TITLE[Variables] \n\t\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\t\n\t+ Homer \\USE[lastname] \n\t+ Marge \\USE[lastname]\n\t+ Bart \\USE[lastname]\n\t+ Lisa \\USE[lastname]\t\n\t+ Maggie \\USE[lastname]\n\\END "
-    fileContents = "\\begin\n\t\\DeF[name = Josh]\n\t\\TitlE[Scoped Variables] \n\n\tMy name is \\use[name]. \n\t\n\t\\PARAB\n\t\t\\DEF[name = Jon]\n\t\tInside the paragraph block, my name is \\USE[name].\n\t\\PARAE\n\n\tNow, my name is \\USE[name] again.\n\\END\t "
     Scanner.start(fileContents)
     currentToken = Scanner.getNextToken()
     Parser.gittex()
     convertedFile = SemanticAnalyzer.process()
 
-    testOutputs()
+    //testOutputs()
 
-    //produceFile(args(0))
+    produceFile(args(0))
   }
 
   def readFile(file : String) = {
@@ -35,11 +35,21 @@ object Compiler{
 
   def checkFile(args : Array[String]) = {
     if (args.length != 1) {
-      println("USAGE ERROR: wrong number of args fool!")
+      println("USAGE ERROR: Wrong number of arguments (see -help)")
       System.exit(1)
     }
+    else if (args(0).equals("-help")){
+      println("---HELP---")
+      println("This is a compiler for a language called 'Gittex' (Git/Latex).")
+      println("See documentation at https://github.com/tylernhoward/GittexCompiler")
+      println("\nCompiler takes in .gtx files as arguments.\nProper use:\n\t'java -jar compiler.jar file_name.gtx'")
+      println("You may specify a folder path like this:\n\t'java -jar compiler.jar folder_name/file_name.gtx'")
+      println("\nEnjoy! -Tyler")
+      System.exit(1)
+
+    }
     else if (! args(0).endsWith(".gtx")) {
-      println("USAGE ERROR: wrong extension fool!")
+      println("USAGE ERROR: Wrong extension, needs '.gtx' (see -help)")
       System.exit(1)
     }
   }
@@ -56,7 +66,7 @@ object Compiler{
   /* * Hack Scala/Java function to take a String filename and open in default web browser. */
   def openHTMLFileInBrowser(htmlFileStr : String) = {
     val file : File = new File(htmlFileStr.trim)
-    println(file.getAbsolutePath)
+    println("File saved at:\n\t" +file.getAbsolutePath)
     if (!file.exists())
       sys.error("File " + htmlFileStr + " does not exist.")
 

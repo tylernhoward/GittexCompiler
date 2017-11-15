@@ -14,7 +14,7 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
 
   override def gittex(): Unit = {
     resetError()
-    //get the first token one from the compiler object
+    //get the first token from the compiler object
     if (Compiler.currentToken.equalsIgnoreCase(Constants.DOCB)){
       parseStack.push(Compiler.currentToken)
       currentToken = Compiler.Scanner.getNextToken()
@@ -183,14 +183,14 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
   def setError(expect: String): Unit ={
     //errorCount = errorCount + 1
     errorFound = true
-    println("Syntax error at " + currentToken + ". Expected: " + expect)
+    println("Syntax error at \n\t" + currentToken + "\nExpected: " + expect)
     System.exit(1)
   }
   def checkForStragglers(): Unit ={
-    var file = Compiler.fileContents
-    file = file.substring(Compiler.fileContents.indexOf(Constants.DOCE),Compiler.fileContents.length()).trim()
+    var file = Compiler.fileContents.toUpperCase()
+    file = file.substring(file.indexOf(Constants.DOCE),file.length()).trim()
     if (!file.endsWith(Constants.DOCE)){
-      println("Syntax error at " + file + ". No tokens may exist after \\END")
+      println("Syntax error at \n\t" + file + "\nNo tokens may exist after \\END")
       System.exit(1)
     }
   }
