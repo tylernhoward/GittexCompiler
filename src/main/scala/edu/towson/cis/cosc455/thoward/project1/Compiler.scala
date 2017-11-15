@@ -14,16 +14,15 @@ object Compiler{
   val SemanticAnalyzer = new MySemanticAnalyzer
 
   def main(args: Array[String]): Unit = {
+    //This is the one that does not work for me, reverted back to version that worked with the most test cases, BLEGH
+    //fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\DEF[hname = Homer]\n\t\\DEF[bname = Bart]\n\t\\TITLE[Variables]\n\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\n\t+ \\USE[hname]  \\USE[lastname]\n\t+ Marge \\USE[lastname]\n\t+ \\USE[bname]  \\USE[lastname]\n\t+ Lisa \\USE[lastname]\n\t+ Maggie \\USE[lastname]\n\\END"
     checkFile(args)
     readFile(args(0))
-    //fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\DEF[hname = Homer]\n\t\\DEF[bname = Bart]\n\t\\TITLE[Variables]\n\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\n\t+ \\USE[hname]  \\USE[lastname]df\n\t+ Marge \\USE[lastname]df\n\t+ \\USE[bname]  \\USE[lastname]df\n\t+ Lisa \\USE[lastname]\n\t+ Maggie \\USE[lastname]\n\\END"
     Scanner.start(fileContents)
     currentToken = Scanner.getNextToken()
     Parser.gittex()
     convertedFile = SemanticAnalyzer.process()
-
     //testOutputs()
-
     produceFile(args(0))
   }
 
