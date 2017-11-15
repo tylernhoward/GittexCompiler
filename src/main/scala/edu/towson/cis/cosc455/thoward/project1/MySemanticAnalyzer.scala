@@ -11,15 +11,15 @@ class MySemanticAnalyzer {
   var parseStack = Stack[String]()
   var variableList = Stack[Declaration]()
   var scope: Int = 0
-
   var next: String = ""
+  /* method to start up the process, and return to html to the compiler */
   def process():String ={
     parseStack = Compiler.Parser.parseStack.reverse
     convert()
     convertedStack = convertedStack.reverse
     convertedStack.mkString
   }
-
+  /* method responsible for calling the conversion methods for start tokens */
   def convert(): Unit ={
     while(!parseStack.isEmpty){
       next = parseStack.pop()
@@ -28,11 +28,11 @@ class MySemanticAnalyzer {
         case Constants.DOCE => convertedStack.push("</html>")
         case Constants.PARAB => {
           convertedStack.push("<p>")
-          scope = 1
+          scope = 1 //sets the current scope for the variable declarations to Paragraph
         }
         case Constants.PARAE => {
           convertedStack.push("</p>")
-          scope = 0
+          scope = 0 //sets the current scope for the variable declarations to Global
         }
         case Constants.DEFB => variableDefine()
         case Constants.USEB => variableUse(parseStack.pop())
@@ -47,6 +47,7 @@ class MySemanticAnalyzer {
       }
     }
   }
+
   def makeTitle(): Unit ={
     convertedStack.push("<title>")
     next = parseStack.pop()
@@ -116,7 +117,6 @@ class MySemanticAnalyzer {
       makeLink()
     }
     convertedStack.push("</li>")
-
   }
 
   def variableDefine(): Unit ={
@@ -124,16 +124,18 @@ class MySemanticAnalyzer {
     parseStack.pop()
     val value = parseStack.pop().trim()
     parseStack.pop()
-    variableList.push(new Declaration(name,value,scope))
+    variableList.push(new Declaration(name,value,scope)) //creates an object for declaration and pushes into array
   }
 
   def variableUse(useVar:String): Unit = {
+    //if the only variable, no need to resolve naming scope
     if (variableList.length == 1 && variableList.top.variable.equals(useVar)){
       convertedStack.push(variableList.top.value + " ")
     }
     else if (variableList.length > 1){
       resolveScope(useVar)
     }
+    //no declaration is present
     else{
       println("Static semantic error:\nNo declaration found for: " + useVar)
       System.exit(1)
@@ -146,6 +148,7 @@ class MySemanticAnalyzer {
     var tempStack = Stack[Declaration]()
     while (!isFound && variableList.length != 0) {
       tempStack.push(variableList.pop())
+      //if the name and scope level are the same as expected, you may proceed
       if (tempStack.top.variable.equals(useVar) && tempStack.top.level == scope) {
         isFound = true
         val foundVar: Declaration = new Declaration(tempStack.top.variable, tempStack.top.value, tempStack.top.level)
@@ -155,6 +158,7 @@ class MySemanticAnalyzer {
         isFound = false
       }
     }
+    //rebuild variable list
     while (!tempStack.isEmpty) {
       variableList.push(tempStack.pop())
     }

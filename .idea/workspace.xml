@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="deb26bc0-bc17-4807-baf1-e267326e2dc5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/helpers/Declaration.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/traits/Declaration.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer$$anon$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/traits/Declaration.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/Compiler$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/Compiler$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/compiler_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/compiler_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" />
     </list>
@@ -43,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Compiler.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Compiler.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            <state relative-caret-position="-429">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#49#72#0" expanded="true" />
               </folding>
@@ -79,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <caret line="16" column="78" lean-forward="false" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
               <folding>
                 <element signature="e#48#112#0" expanded="true" />
               </folding>
@@ -87,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySemanticAnalyzer.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MySemanticAnalyzer.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="115" column="16" lean-forward="false" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+            <state relative-caret-position="2720">
+              <caret line="160" column="27" lean-forward="true" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
               <folding>
                 <element signature="e#49#65#0" expanded="true" />
               </folding>
@@ -157,9 +147,9 @@
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/traits/Declaration.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/helpers/Declaration.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MyLexicalAnalyzer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala" />
       </list>
     </option>
   </component>
@@ -451,12 +441,12 @@
       <workItem from="1510683024242" duration="5730000" />
       <workItem from="1510690430174" duration="419000" />
       <workItem from="1510691419623" duration="64000" />
-      <workItem from="1510701725560" duration="12592000" />
+      <workItem from="1510701725560" duration="13418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125807000" />
+    <option name="totallyTimeSpent" value="126633000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,16 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#48#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/traits/SyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -885,22 +865,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="115" column="16" lean-forward="false" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+        <state relative-caret-position="-429">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#49#65#0" expanded="true" />
+            <element signature="e#49#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/Compiler.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        <state relative-caret-position="272">
+          <caret line="16" column="78" lean-forward="false" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
           <folding>
-            <element signature="e#49#72#0" expanded="true" />
+            <element signature="e#48#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cis/cosc455/thoward/project1/MySemanticAnalyzer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="160" column="27" lean-forward="true" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
+          <folding>
+            <element signature="e#49#65#0" expanded="true" />
           </folding>
         </state>
       </provider>

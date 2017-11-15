@@ -16,8 +16,7 @@ object Compiler{
   def main(args: Array[String]): Unit = {
     checkFile(args)
     readFile(args(0))
-   // fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\DEF[hname = Homer]\n\t\\DEF[bname = Bart]\n\t\\TITLE[Variables]\n\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\n\t+ \\USE[hname]  \\USE[lastname]df\n\t+ Marge \\USE[lastname]df\n\t+ \\USE[bname]  \\USE[lastname]df\n\t+ Lisa \\USE[lastname]\n\t+ Maggie \\USE[lastname]\n\\END"
-    //fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\TITLE[Variables] \n\t\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\t\n\t+ Homer \\USE[lastname] \n\t+ Marge \\USE[lastname]\n\t+ Bart \\USE[lastname]\n\t+ Lisa \\USE[lastname]\t\n\t+ Maggie \\USE[lastname]\n\\END "
+    //fileContents = "\\BEGIN\n\t\\DEF[lastname = Simpson]\n\t\\DEF[hname = Homer]\n\t\\DEF[bname = Bart]\n\t\\TITLE[Variables]\n\n\t\\PARAB\n\t\tThe members of the \\USE[lastname] family are:\n\t\\PARAE\n\n\t+ \\USE[hname]  \\USE[lastname]df\n\t+ Marge \\USE[lastname]df\n\t+ \\USE[bname]  \\USE[lastname]df\n\t+ Lisa \\USE[lastname]\n\t+ Maggie \\USE[lastname]\n\\END"
     Scanner.start(fileContents)
     currentToken = Scanner.getNextToken()
     Parser.gittex()

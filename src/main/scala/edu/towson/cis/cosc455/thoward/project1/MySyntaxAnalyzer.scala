@@ -14,16 +14,16 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
 
   override def gittex(): Unit = {
     resetError()
-    //get the first token from the compiler object
+    //get the first token from the compiler object instead of specialty method
     if (Compiler.currentToken.equalsIgnoreCase(Constants.DOCB)){
       parseStack.push(Compiler.currentToken)
       currentToken = Compiler.Scanner.getNextToken()
     } else setError(Constants.DOCB)
-    while(currentToken.equalsIgnoreCase(Constants.DEFB)){variableDefine()}
+    while(currentToken.equalsIgnoreCase(Constants.DEFB)){variableDefine()} // multiple variables can be defined
     title()
     body()
     makeParse(Constants.DOCE)
-    checkForStragglers()
+    checkForStragglers() //check if anything existed past \END
   }
 
   override def paragraph(): Unit = {
@@ -164,6 +164,7 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
     }
   }
 
+  /* * Methods to add to Stack given a specific token constant * */
   def makeParse(cToken:String): Unit = {
     resetError()
     if (currentToken.equalsIgnoreCase(cToken)){
@@ -180,14 +181,19 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer{
       currentToken = Compiler.Scanner.getNextToken()
     } else setError("text")
   }
+
+  /* * If method was called, print syntax error, what was expected and exit * */
   def setError(expect: String): Unit ={
     //errorCount = errorCount + 1
     errorFound = true
     println("Syntax error at \n\t" + currentToken + "\nExpected: " + expect)
     System.exit(1)
   }
+
+  /* Checks if anything was residing beyond our 'syntactical' walls*/
   def checkForStragglers(): Unit ={
     var file = Compiler.fileContents.toUpperCase()
+    //get all text from \END to the end of the file (ignore spaces)
     file = file.substring(file.indexOf(Constants.DOCE),file.length()).trim()
     if (!file.endsWith(Constants.DOCE)){
       println("Syntax error at \n\t" + file + "\nNo tokens may exist after \\END")
